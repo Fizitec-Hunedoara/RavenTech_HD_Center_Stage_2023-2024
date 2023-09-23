@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 @TeleOp
 public class Robotel extends OpMode {
-    public DcMotorEx motorBR,motorBL;
+    public DcMotorEx motorFL,motorFR,motorBR,motorBL;
     @Override
     public void init() {
 
