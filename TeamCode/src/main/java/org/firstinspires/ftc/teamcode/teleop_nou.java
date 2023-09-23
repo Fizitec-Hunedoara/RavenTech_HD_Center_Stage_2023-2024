@@ -9,9 +9,11 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
     OpMode = TeleOp
     LinearOpMode = Autonom
  public class TeleOpSasiu extends OpMode {
-        /*Functia de init se ruleaza numai o data, se foloseste pentru initializarea motoarelor si chestii :)*/
-    @Override
+public DcMotorEx MotorBL
+         @Override
     public void init() {
+MotorBL  = hardwareMap.get(DcMotorEx.class, "1"); // Motor Back-Left
+
            }
     /*Public void start se porneste o data cand se apasa pe butonul de start*/
     public void start(){
@@ -22,7 +24,6 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
     private final Thread Chassis = new Thread(new Runnable() {
         @Override
         public void run(){
-            /*Thread-urile nu vor rula la infinit fara acest while, ci vor rula numai o data. Asta este foarte folositor pentru Telecomandat, dar fara while se pot face thread-uri pentru autonom in unele cazuri*/
             while(!stop) {
                     });
     /*Aici se declara thread-ul cu numele systems, pentru ca contine partea de program care se ocupa de sisteme*/
@@ -30,6 +31,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
         @Override
         public void run() {
             while (!stop) {
+         if (gamepad1.left_stick_y) 
+                      MotorBL.SetPower(1);
                 }
         }
     });
