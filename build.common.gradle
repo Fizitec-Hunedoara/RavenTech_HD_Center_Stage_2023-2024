@@ -18,10 +18,11 @@
 import java.util.regex.Pattern
 
 apply plugin: 'com.android.application'
+apply plugin: 'org.team11260.fast-load-plugin'
 
 android {
 
-    compileSdkVersion 29
+    compileSdkVersion 33
 
     signingConfigs {
         release {
